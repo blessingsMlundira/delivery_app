@@ -1,0 +1,314 @@
+/* Profile Container */
+.profile-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px;
+  min-height: 100vh;
+  background: #f8fafc;
+}
+
+/* Profile Header */
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  padding: 16px 24px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.profile-title {
+  font-weight: 700 !important;
+  color: #1a202c !important;
+}
+
+.edit-toggle-btn {
+  text-transform: none !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  padding: 8px 24px !important;
+}
+
+/* Profile Card */
+.profile-card {
+  padding: 32px !important;
+  border-radius: 16px !important;
+  margin-bottom: 32px !important;
+  transition: box-shadow 0.3s ease !important;
+}
+
+.profile-card:hover {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Avatar Section */
+.profile-avatar-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 32px;
+  position: relative;
+}
+
+.profile-avatar {
+  width: 100px !important;
+  height: 100px !important;
+  font-size: 36px !important;
+  font-weight: 700 !important;
+  background: linear-gradient(135deg, #4a6cf7, #6c8cff) !important;
+  margin-bottom: 12px !important;
+  box-shadow: 0 4px 16px rgba(74, 108, 247, 0.3) !important;
+}
+
+.status-badge {
+  position: absolute;
+  top: 70px;
+  right: calc(50% - 55px);
+  font-weight: 600 !important;
+}
+
+/* Section Divider */
+.section-divider {
+  margin: 8px 0 16px 0 !important;
+}
+
+/* Detail Fields */
+.detail-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.detail-label {
+  font-weight: 600 !important;
+  color: #4a5568 !important;
+  font-size: 0.75rem !important;
+  letter-spacing: 0.5px !important;
+  text-transform: uppercase !important;
+}
+
+.detail-value {
+  font-weight: 500 !important;
+  color: #2d3748 !important;
+  padding: 4px 0 !important;
+}
+
+/* Edit Inputs */
+.edit-input .MuiOutlinedInput-root {
+  background: #f7fafc !important;
+  border-radius: 8px !important;
+  transition: all 0.2s ease !important;
+}
+
+.edit-input .MuiOutlinedInput-root:hover {
+  background: #edf2f7 !important;
+}
+
+.edit-input .MuiOutlinedInput-root.Mui-focused {
+  background: white !important;
+  box-shadow: 0 0 0 3px rgba(74, 108, 247, 0.1) !important;
+}
+
+.edit-input .MuiOutlinedInput-notchedOutline {
+  border-color: #e2e8f0 !important;
+}
+
+.edit-input .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #4a6cf7 !important;
+  border-width: 2px !important;
+}
+
+/* Select Input */
+.edit-select .MuiOutlinedInput-root {
+  background: #f7fafc !important;
+  border-radius: 8px !important;
+}
+
+.edit-select .MuiOutlinedInput-root:hover {
+  background: #edf2f7 !important;
+}
+
+.edit-select .MuiOutlinedInput-notchedOutline {
+  border-color: #e2e8f0 !important;
+}
+
+/* Preference Chip */
+.preference-chip {
+  align-self: flex-start !important;
+  font-weight: 500 !important;
+  padding: 4px 12px !important;
+  border-color: #4a6cf7 !important;
+  color: #4a6cf7 !important;
+}
+
+/* Action Buttons */
+.profile-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 2px solid #f0f0f0;
+}
+
+.profile-actions .MuiButton-root {
+  text-transform: none !important;
+  font-weight: 600 !important;
+  padding: 8px 32px !important;
+  border-radius: 8px !important;
+}
+
+/* Stats Grid */
+.stats-grid {
+  margin-top: 0 !important;
+}
+
+.stat-card {
+  padding: 20px !important;
+  text-align: center !important;
+  border-radius: 12px !important;
+  transition: all 0.3s ease !important;
+  cursor: default !important;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08) !important;
+}
+
+.stat-number {
+  font-weight: 700 !important;
+  color: #2d3748 !important;
+  margin-bottom: 4px !important;
+}
+
+.stat-label {
+  color: #718096 !important;
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .profile-container {
+    padding: 16px;
+  }
+
+  .profile-header {
+    flex-direction: column;
+    gap: 16px;
+    align-items: stretch;
+    padding: 16px;
+  }
+
+  .profile-header .MuiTypography-root {
+    text-align: center;
+  }
+
+  .profile-card {
+    padding: 20px !important;
+  }
+
+  .profile-avatar {
+    width: 80px !important;
+    height: 80px !important;
+    font-size: 28px !important;
+  }
+
+  .status-badge {
+    top: 55px;
+    right: calc(50% - 45px);
+  }
+
+  .profile-actions {
+    flex-direction: column;
+  }
+
+  .profile-actions .MuiButton-root {
+    width: 100%;
+  }
+
+  .stat-card {
+    padding: 16px !important;
+  }
+
+  .stat-number {
+    font-size: 1.5rem !important;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .profile-container {
+    padding: 20px;
+  }
+
+  .profile-card {
+    padding: 24px !important;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .profile-container {
+    background: #1a202c;
+  }
+
+  .profile-header {
+    background: #2d3748;
+  }
+
+  .profile-title {
+    color: #f7fafc !important;
+  }
+
+  .profile-card {
+    background: #2d3748 !important;
+  }
+
+  .detail-label {
+    color: #a0aec0 !important;
+  }
+
+  .detail-value {
+    color: #e2e8f0 !important;
+  }
+
+  .edit-input .MuiOutlinedInput-root {
+    background: #4a5568 !important;
+  }
+
+  .edit-input .MuiOutlinedInput-root input {
+    color: #f7fafc !important;
+  }
+
+  .edit-select .MuiOutlinedInput-root {
+    background: #4a5568 !important;
+  }
+
+  .edit-select .MuiOutlinedInput-root .MuiSelect-select {
+    color: #f7fafc !important;
+  }
+
+  .stat-card {
+    background: #2d3748 !important;
+  }
+
+  .stat-number {
+    color: #f7fafc !important;
+  }
+
+  .stat-label {
+    color: #a0aec0 !important;
+  }
+
+  .section-divider {
+    background-color: #4a5568 !important;
+  }
+
+  .profile-actions {
+    border-top-color: #4a5568 !important;
+  }
+}
