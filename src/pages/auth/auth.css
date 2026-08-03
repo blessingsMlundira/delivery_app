@@ -1,0 +1,299 @@
+/* ==========================================================================
+   Auth pages — shared styling for Login.jsx and Signup.jsx
+   Design language: Lilongwe market-to-doorstep. Warm marigold + tea-estate
+   teal, paper background, a single signature "route line" motif that
+   traces a delivery path from shop to home.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&display=swap');
+
+:root {
+  --paper: #FBF6EC;
+  --paper-dim: #F1E9D8;
+  --ink: #20201C;
+  --ink-soft: #5B5648;
+  --marigold: #E8A33D;
+  --marigold-dark: #C97F1E;
+  --teal: #1F6F5C;
+  --teal-dark: #164F41;
+  --chili: #C4432B;
+  --line: #E3DAC4;
+  --radius: 14px;
+  --shadow: 0 12px 30px rgba(32, 32, 28, 0.10);
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Work Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+.auth-screen {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--paper);
+  font-family: var(--font-body);
+  color: var(--ink);
+}
+
+/* ---------- Brand panel (left) ---------- */
+
+.auth-brand {
+  position: relative;
+  background: linear-gradient(160deg, var(--teal) 0%, var(--teal-dark) 100%);
+  color: var(--paper);
+  padding: 56px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.auth-brand__mark {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.4rem;
+  letter-spacing: 0.01em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 1;
+}
+
+.auth-brand__mark span {
+  color: var(--marigold);
+}
+
+.auth-brand__copy {
+  z-index: 1;
+  max-width: 380px;
+}
+
+.auth-brand__copy h1 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 2.4rem;
+  line-height: 1.15;
+  margin: 0 0 14px;
+}
+
+.auth-brand__copy p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(251, 246, 236, 0.82);
+  margin: 0;
+}
+
+/* Signature element: an animated route line from a shop pin to a home pin */
+.route-line {
+  z-index: 1;
+  margin-top: 40px;
+}
+
+.route-line svg { width: 100%; height: auto; display: block; }
+
+.route-line .path {
+  fill: none;
+  stroke: var(--marigold);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-dasharray: 6 10;
+  animation: dash-travel 14s linear infinite;
+}
+
+.route-line .pin { fill: var(--paper); }
+.route-line .pin-dot { fill: var(--marigold); }
+
+@keyframes dash-travel {
+  to { stroke-dashoffset: -400; }
+}
+
+.auth-brand::after {
+  content: "";
+  position: absolute;
+  right: -80px;
+  bottom: -80px;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: rgba(232, 163, 61, 0.12);
+}
+
+/* ---------- Form panel (right) ---------- */
+
+.auth-form-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 32px;
+}
+
+.auth-form-card {
+  width: 100%;
+  max-width: 400px;
+}
+
+.auth-form-card__eyebrow {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin: 0 0 8px;
+}
+
+.auth-form-card h2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.9rem;
+  margin: 0 0 6px;
+}
+
+.auth-form-card__hint {
+  color: var(--ink-soft);
+  font-size: 0.94rem;
+  margin: 0 0 28px;
+}
+
+.auth-form-card__hint a {
+  color: var(--teal);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.auth-form-card__hint a:hover { text-decoration: underline; }
+
+.field {
+  margin-bottom: 18px;
+}
+
+.field label {
+  display: block;
+  font-size: 0.86rem;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: var(--ink);
+}
+
+.field input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+  font-family: var(--font-body);
+  font-size: 0.96rem;
+  color: var(--ink);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.field input::placeholder { color: #B7AF9A; }
+
+.field input:focus {
+  outline: none;
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px rgba(31, 111, 92, 0.14);
+}
+
+.field input[aria-invalid="true"] {
+  border-color: var(--chili);
+}
+
+.field input[aria-invalid="true"]:focus {
+  box-shadow: 0 0 0 3px rgba(196, 67, 43, 0.14);
+}
+
+.field-error {
+  margin-top: 6px;
+  font-size: 0.82rem;
+  color: var(--chili);
+}
+
+.field-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: -6px 0 20px;
+}
+
+.checkbox-field {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.86rem;
+  color: var(--ink-soft);
+  margin-bottom: 22px;
+}
+
+.checkbox-field input { margin-top: 3px; }
+
+.checkbox-field a { color: var(--teal); font-weight: 600; text-decoration: none; }
+.checkbox-field a:hover { text-decoration: underline; }
+
+.link-muted {
+  font-size: 0.86rem;
+  color: var(--teal);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.link-muted:hover { text-decoration: underline; }
+
+.btn-primary {
+  width: 100%;
+  padding: 13px 16px;
+  border: none;
+  border-radius: 10px;
+  background: var(--marigold);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.98rem;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.05s ease;
+}
+
+.btn-primary:hover:not(:disabled) { background: var(--marigold-dark); }
+.btn-primary:active:not(:disabled) { transform: translateY(1px); }
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.form-banner {
+  padding: 11px 14px;
+  border-radius: 10px;
+  font-size: 0.86rem;
+  margin-bottom: 18px;
+}
+
+.form-banner--error {
+  background: rgba(196, 67, 43, 0.09);
+  color: var(--chili);
+  border: 1px solid rgba(196, 67, 43, 0.25);
+}
+
+.form-banner--success {
+  background: rgba(31, 111, 92, 0.09);
+  color: var(--teal-dark);
+  border: 1px solid rgba(31, 111, 92, 0.25);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 860px) {
+  .auth-screen {
+    grid-template-columns: 1fr;
+  }
+  .auth-brand {
+    padding: 32px 28px;
+  }
+  .auth-brand__copy h1 { font-size: 1.7rem; }
+  .route-line { margin-top: 24px; }
+  .auth-form-panel { padding: 32px 24px 56px; }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .route-line .path { animation: none; }
+}
